@@ -84,19 +84,21 @@
 .scroll-scrub__route {
   position: absolute;
   z-index: 6;
-  top: clamp(5.5rem, 8vw, 6.2rem);
+  top: clamp(4.9rem, 7vw, 6rem);
   right: clamp(1rem, 4vw, 4rem);
   left: clamp(1rem, 4vw, 4rem);
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.25rem;
+  white-space: nowrap;
   pointer-events: auto;
 }
 
 @media (min-width: 1080px) {
   .scroll-scrub__route {
-    right: clamp(18rem, 24vw, 24rem);
-    left: clamp(18rem, 24vw, 24rem);
+    right: clamp(14rem, 20vw, 22rem);
+    left: clamp(14rem, 20vw, 22rem);
   }
 }
 
@@ -145,7 +147,7 @@
   display: flex;
   align-items: center;
   min-height: 100dvh;
-  padding: clamp(4.5rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem)
+  padding: clamp(5.8rem, 8.4vw, 7rem) clamp(1.25rem, 6vw, 6rem)
     clamp(5rem, 9vw, 8rem);
   pointer-events: none;
 }

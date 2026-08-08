@@ -107,7 +107,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     clip: CLIP,
     id: "scene-access",
     kicker: "Ch. 5 — Access",
-    label: "Work together",
+    label: "Access",
     mobileClip: MOBILE_CLIP,
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
