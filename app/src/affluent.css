@@ -87,10 +87,14 @@
 }
 
 .aff__nav-word {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   flex: 0 0 0;
@@ -100,14 +104,12 @@
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
+  z-index: 59;
 }
 
 @media (max-width: 640px) {
   .aff__nav-word {
-    position: static;
-    transform: none;
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
+    display: none;
   }
 }
 
