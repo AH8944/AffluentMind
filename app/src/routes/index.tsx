@@ -251,8 +251,8 @@ function Nav() {
           src="/assets/brand/am-badge.png"
           width="34"
         />
+        <span className="aff__nav-word">The Affluent Mind</span>
       </a>
-      <p className="aff__nav-word">The Affluent Mind</p>
       <nav aria-label="Channels" className="aff__nav-links">
         <a href="#projects">Projects</a>
         <a href="/channel">Channel</a>
