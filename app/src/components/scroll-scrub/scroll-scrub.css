@@ -226,10 +226,13 @@
   }
 
   .scroll-scrub__route {
-    top: calc(4.4rem + env(safe-area-inset-top));
-    right: max(0.75rem, env(safe-area-inset-right));
-    left: auto;
-    justify-content: flex-end;
+    top: calc(4.9rem + env(safe-area-inset-top));
+    right: 50%;
+    left: 50%;
+    width: fit-content;
+    max-width: 100%;
+    transform: translateX(-50%);
+    justify-content: center;
   }
 
   .scroll-scrub__route-button span {
@@ -237,14 +240,18 @@
   }
 
   .scroll-scrub__route-button {
-    width: 0.9rem;
-    min-height: 0.9rem;
-    height: 0.9rem;
+    width: 0.85rem;
+    min-height: 0.85rem;
+    height: 0.85rem;
     padding: 0;
     border: 1px solid var(--ss-muted);
     border-radius: 999px;
-    margin-left: 0.55rem;
+    margin-left: 0.7rem;
     background: color-mix(in srgb, var(--ss-bg) 70%, transparent);
+  }
+
+  .scroll-scrub__route-button:first-child {
+    margin-left: 0;
   }
 
   .scroll-scrub__route-button[aria-current="step"] {
