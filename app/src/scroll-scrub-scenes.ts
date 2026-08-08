@@ -26,10 +26,10 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "left",
     body:
-      "A single warm current in a void. Then a second. Then the geometry resolves into a thought-network — a head waking from a point of light.",
+      "A single pinprick of gold in a warm void. Then a second — and the geometry begins to resolve. This is the system waking.",
     clip: CLIP,
     id: "scene-awakening",
-    kicker: "Ch. 0 — The Silence",
+    kicker: "Ch. 0 — The silence",
     label: "Awakening",
     linger: 0.15,
     mobileClip: MOBILE_CLIP,
@@ -42,7 +42,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "right",
     body:
-      "The threads wake. The brand mark is not drawn — it is a system of living threads that ignite and stay lit. The palette is the filament.",
+      "The filaments wake in sequence and resolve into the mark itself — not drawn, but assembled living. What is true of the logo is true of the channels.",
     clip: CLIP,
     id: "scene-ignition",
     kicker: "Ch. 1 — Ignition",
@@ -52,13 +52,13 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: ["Brushed gold filaments", "Threads not decoration"],
-    title: "The network wakes.",
+    tags: [],
+    title: "Thought, running at scale.",
   },
   {
     align: "left",
     body:
-      "The camera drifts toward a denser node: behavioural finance told as cinema. Twelve long-form episodes shipped in eight weeks — every frame AI, no shooting, no stock. The channel is the proof the system works at pace.",
+      "The first and densest node: a documentary channel about psychology and money, shipped as cinema. Twelve episodes in the first eight weeks, every frame generated. This is what happens when the system is asked to teach.",
     clip: CLIP,
     id: "scene-affluentmind",
     kicker: "Ch. 2 — The flagship",
@@ -67,13 +67,13 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: [],
+    tags: ["2.2M views · 24K subscribers"],
     title: "The Affluent Mind",
   },
   {
     align: "right",
     body:
-      "An LA gym girl whose bio leads with the AI disclosure and grew anyway. Protein counts, PRs, rest-day fits, cold plunges, coffee runs. For a brand: any look, in any colorway, same-day, with 96 short-form derivatives from the same assets.",
+      "A second node, brighter: an LA gym girl with a dry humor and a sign-off, her AI disclosure at the top of her bio. Followers choose her anyway — the transparency was the pitch. For a brand, she is production infrastructure at a creator's cadence.",
     clip: CLIP,
     id: "scene-niki",
     kicker: "Ch. 3 — Sister network I",
@@ -82,13 +82,13 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: [],
+    tags: ["120K followers · AI-disclosed"],
     title: "Niki",
   },
   {
     align: "left",
     body:
-      "Two voices, one cup of chai. Priya speaks in small metaphors; Arya, eleven, asks the question everyone else is avoiding. Mom guilt, friend drama, first money decisions — each moment's reason, surfaced.",
+      "A third node warming: an Indian-American mother in her forties and her eleven-year-old daughter, talking over a cup of chai about whatever went wrong today. The system here is warmer in voice, lower in cadence, and not live yet.",
     clip: CLIP,
     id: "scene-spillthechai",
     kicker: "Ch. 4 — Sister network II",
@@ -103,7 +103,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "right",
     body:
-      "Camera settles. The three sister networks are all lit around the central mark. This is what the journey was building to — the system fully awake.",
+      "The camera settles. All three channels lit around the same mark — one pipeline producing a documentary, a creator persona, and a mother-daughter conversation. The system is awake. Work with it, or build against it.",
     clip: CLIP,
     id: "scene-access",
     kicker: "Ch. 5 — Access",
@@ -112,7 +112,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.1,
-    tags: ["The constellation, lit"],
+    tags: [],
     title: "Access.",
   },
 ];
