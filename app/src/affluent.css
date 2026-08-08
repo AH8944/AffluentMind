@@ -40,7 +40,16 @@
     rgb(10 10 8 / 0.78),
     rgb(10 10 8 / 0)
   );
+  border-bottom: 1px solid transparent;
   pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .aff__nav {
+    padding: 0.95rem clamp(1rem, 4vw, 1.25rem);
+    background: var(--aff-bg);
+    border-bottom-color: var(--aff-line);
+  }
 }
 
 .aff__nav-brand,

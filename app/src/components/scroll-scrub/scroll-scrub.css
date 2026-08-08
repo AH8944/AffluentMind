@@ -226,12 +226,31 @@
   }
 
   .scroll-scrub__route {
+    top: calc(4.4rem + env(safe-area-inset-top));
     right: max(0.75rem, env(safe-area-inset-right));
-    left: max(0.75rem, env(safe-area-inset-left));
-    justify-content: flex-start;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
+    left: auto;
+    justify-content: flex-end;
+  }
+
+  .scroll-scrub__route-button span {
+    display: none;
+  }
+
+  .scroll-scrub__route-button {
+    width: 0.9rem;
+    min-height: 0.9rem;
+    height: 0.9rem;
+    padding: 0;
+    border: 1px solid var(--ss-muted);
+    border-radius: 999px;
+    margin-left: 0.55rem;
+    background: color-mix(in srgb, var(--ss-bg) 70%, transparent);
+  }
+
+  .scroll-scrub__route-button[aria-current="step"] {
+    border-color: var(--ss-accent);
+    background: var(--ss-accent);
+    text-decoration: none;
   }
 
   .scroll-scrub__route-button {
