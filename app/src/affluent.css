@@ -287,7 +287,7 @@
   gap: clamp(2rem, 4vw, 4rem);
 }
 
-.aff__card--affluentmind101 {
+.aff__card--affluentmind {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
 }
 
@@ -307,7 +307,7 @@
 
 @media (max-width: 900px) {
   .aff__card,
-  .aff__card--affluentmind101,
+  .aff__card--affluentmind,
   .aff__card--niki,
   .aff__card--spillthechai {
     grid-template-columns: 1fr;
@@ -881,6 +881,254 @@
   text-decoration: underline;
   text-decoration-color: var(--aff-accent-deep);
   text-underline-offset: 0.25em;
+}
+
+/* ========================= CHANNEL PAGE ======================= */
+
+.chan {
+  background: var(--aff-bg);
+}
+
+.chan__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: end;
+  padding: clamp(8rem, 12vw, 11rem) clamp(1.25rem, 6vw, 6rem)
+    clamp(4rem, 8vw, 7rem);
+}
+
+@media (max-width: 900px) {
+  .chan__hero {
+    grid-template-columns: 1fr;
+    padding-top: 7rem;
+  }
+}
+
+.chan__hero-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(2.4rem, 5.4vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.chan__hero-lede {
+  max-width: 48ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1.02rem, 1.3vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.chan__hero-media {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aff-line);
+  border-radius: 2px;
+  aspect-ratio: 16 / 9;
+  background: var(--aff-surface);
+}
+
+.chan__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+.chan__stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--aff-line);
+  border-bottom: 1px solid var(--aff-line);
+  background: var(--aff-surface);
+  gap: 1px;
+}
+
+@media (max-width: 900px) {
+  .chan__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+  }
+}
+
+.chan__stat {
+  background: var(--aff-bg);
+  padding: clamp(1.8rem, 3.5vw, 2.8rem) clamp(1rem, 2.5vw, 2rem);
+}
+
+.chan__stat-n {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--aff-accent);
+}
+
+.chan__stat-label {
+  margin: 0.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.chan__topics {
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.chan__topics-heading {
+  max-width: 22ch;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--aff-font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.chan__episodes {
+  border-top: 1px solid var(--aff-line);
+}
+
+.chan__episode {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: first baseline;
+  padding: clamp(1.8rem, 3.5vw, 2.8rem) 0;
+  border-bottom: 1px solid var(--aff-line);
+}
+
+@media (max-width: 700px) {
+  .chan__episode {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chan__episode-index {
+  margin: 0;
+  color: var(--aff-accent-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.chan__episode-hook {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.chan__episode-line {
+  margin: 0.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.chan__why {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.chan__why-heading {
+  max-width: 26ch;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.chan__why-rows {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.chan__why-row {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: first baseline;
+}
+
+.chan__why-idx {
+  margin: 0;
+  color: var(--aff-accent-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.chan__why-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.chan__why-body {
+  max-width: 52ch;
+  margin: 0.9rem 0 0;
+  color: var(--aff-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.chan__cta {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem);
+  text-align: center;
+}
+
+.chan__cta-eyebrow {
+  margin: 0 0 1.6rem;
+  color: var(--aff-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.chan__cta-line {
+  display: inline-block;
+  color: var(--aff-ink);
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 4.6vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+  background-image: linear-gradient(var(--aff-accent), var(--aff-accent));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition:
+    color 240ms ease,
+    background-size 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chan__cta-line:hover {
+  color: var(--aff-accent);
+  background-size: 100% 2px;
+}
+
+.chan__cta-sub {
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: 0.95rem;
 }
 
 .niki__foot {

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
 });
 
 type Project = {
-  id: "affluentmind101" | "niki" | "spillthechai";
+  id: "affluentmind" | "niki" | "spillthechai";
   kicker: string;
   metric: string;
   metricLabel: string;
@@ -23,18 +23,19 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    alt: "AffluentMind101 channel artwork — a minimal gold-on-black play signal.",
+    alt: "The Affluent Mind — a flag-and-signal mark on dark ground.",
     art: "/assets/content/affluentmind101-poster.jpg",
     artPosition: "50% 40%",
     ctaGarment: "framed",
-    ctaLabel: "Watch the channel on YouTube",
+    ctaLabel: "Watch on YouTube",
     href: "https://youtube.com/@AffluentMind101",
-    id: "affluentmind101",
-    kicker: "Faceless YouTube — Live",
-    metric: "1.7M",
-    metricLabel: "views on one video, channel under 30 days old",
+    id: "affluentmind",
+    kicker: "AI-produced documentary channel — Live",
+    metric: "2.2M",
+    metricLabel:
+      "views, all AI-generated · 24K subscribers · 1.7M on a single episode",
     summary:
-      "A faceless channel built on one premise: show how modern AI-content systems actually work, and let the argument be the content. No talking head. No personality cult. Just operational clarity from a channel where every render, script and edit is synthetic.",
+      "A premium documentary-style channel about behavioral finance: psychology meets money, twelve long-form episodes built on a strict weekly cadence in the first eight weeks. Each episode is roughly 8 minutes of generated 4K visuals, a consistent synthetic narrator, and custom animated data-visualisations — every frame AI, no shooting, no stock. 96 short-form cuts derive from the same assets at zero marginal cost.",
   },
   {
     alt: "Niki channel artwork — a warm lit portrait of the persona.",
@@ -229,7 +230,7 @@ function BrandMarquee() {
       <div className="aff__marquee-track">
         {Array.from({ length: 3 }).map((_, i) => (
           <p className="aff__marquee-run" key={i}>
-            <span>@AffluentMind101</span>
+            <span>@theaffluentmind_yt</span>
             <span>@heyitsniki2026</span>
             <span>@SpillTheChai</span>
           </p>
@@ -254,7 +255,7 @@ function Nav() {
       </a>
       <nav aria-label="Channels" className="aff__nav-links">
         <a href="#projects">Projects</a>
-        <a href="#thesis">Thesis</a>
+        <a href="/channel">Channel</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>

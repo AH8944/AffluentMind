@@ -58,11 +58,11 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "left",
     body:
-      "The camera drifts toward a denser node. A faceless-instruction channel about how AI-content systems actually work — no talking head, the content is the argument.",
+      "The camera drifts toward a denser node: behavioural finance, told as cinema. Twelve long-form episodes shipped in eight weeks — every frame AI, no shooting, no stock. The channel is the product of the system.",
     clip: CLIP,
-    id: "scene-affluentmind101",
+    id: "scene-affluentmind",
     kicker: "Ch. 2 — Sister network I",
-    label: "AffluentMind101",
+    label: "The Affluent Mind",
     mobileClip: MOBILE_CLIP,
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as NikiRouteImport } from './routes/niki'
+import { Route as ChannelRouteImport } from './routes/channel'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -30,6 +31,11 @@ const NikiRoute = NikiRouteImport.update({
   path: '/niki',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChannelRoute = ChannelRouteImport.update({
+  id: '/channel',
+  path: '/channel',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppRoute = AppRouteImport.update({
   id: '/app',
   path: '/app',
@@ -44,6 +50,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
+  '/channel': typeof ChannelRoute
   '/niki': typeof NikiRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
+  '/channel': typeof ChannelRoute
   '/niki': typeof NikiRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -59,21 +67,31 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/app': typeof AppRoute
+  '/channel': typeof ChannelRoute
   '/niki': typeof NikiRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/app' | '/niki' | '/robots.txt' | '/sitemap.xml'
+  fullPaths:
+    '/' | '/app' | '/channel' | '/niki' | '/robots.txt' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/app' | '/niki' | '/robots.txt' | '/sitemap.xml'
-  id: '__root__' | '/' | '/app' | '/niki' | '/robots.txt' | '/sitemap.xml'
+  to: '/' | '/app' | '/channel' | '/niki' | '/robots.txt' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/channel'
+    | '/niki'
+    | '/robots.txt'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRoute
+  ChannelRoute: typeof ChannelRoute
   NikiRoute: typeof NikiRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -102,6 +120,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NikiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/channel': {
+      id: '/channel'
+      path: '/channel'
+      fullPath: '/channel'
+      preLoaderRoute: typeof ChannelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app': {
       id: '/app'
       path: '/app'
@@ -122,6 +147,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRoute,
+  ChannelRoute: ChannelRoute,
   NikiRoute: NikiRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
