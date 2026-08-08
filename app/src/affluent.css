@@ -57,17 +57,11 @@
 }
 
 .aff__nav-mark {
-  display: grid;
+  display: block;
   width: 2.4rem;
   height: 2.4rem;
-  border: 1px solid var(--aff-line);
   border-radius: 50%;
-  color: var(--aff-accent);
-  font-family: var(--aff-font-display);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  place-items: center;
+  filter: drop-shadow(0 0 10px rgb(224 180 105 / 0.22));
 }
 
 .aff__nav-word {

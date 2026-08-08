@@ -256,7 +256,13 @@ function Nav() {
   return (
     <header className="aff__nav">
       <a className="aff__nav-brand" href="/">
-        <span className="aff__nav-mark">A·M</span>
+        <img
+          alt="The Affluent Mind"
+          className="aff__nav-mark"
+          height="34"
+          src="/assets/brand/am-badge.png"
+          width="34"
+        />
         <span className="aff__nav-word">The Affluent Mind</span>
       </a>
       <nav aria-label="Channels" className="aff__nav-links">
