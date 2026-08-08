@@ -84,13 +84,20 @@
 .scroll-scrub__route {
   position: absolute;
   z-index: 6;
-  top: clamp(1rem, 3vw, 2rem);
+  top: clamp(5.5rem, 8vw, 6.2rem);
   right: clamp(1rem, 4vw, 4rem);
   left: clamp(1rem, 4vw, 4rem);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0.25rem;
   pointer-events: auto;
+}
+
+@media (min-width: 1080px) {
+  .scroll-scrub__route {
+    right: clamp(18rem, 24vw, 24rem);
+    left: clamp(18rem, 24vw, 24rem);
+  }
 }
 
 .scroll-scrub__route-button {
@@ -138,7 +145,8 @@
   display: flex;
   align-items: center;
   min-height: 100dvh;
-  padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+  padding: clamp(4.5rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem)
+    clamp(5rem, 9vw, 8rem);
   pointer-events: none;
 }
 
