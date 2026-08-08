@@ -160,20 +160,6 @@ function ProjectCard({ project }: { project: Project }) {
 function RosterSection() {
   return (
     <section className="aff__roster" id="projects">
-      <header className="aff__roster-header">
-        <p className="aff__eyebrow">The network, rendered</p>
-        <h2 className="aff__roster-title">
-          Three channels. One system.{" "}
-          <span className="aff__roster-title-accent">
-            All of it AI.
-          </span>
-        </h2>
-        <p className="aff__roster-lede">
-          The constellation above was for show. Below is what it actually runs
-          — the channels currently live and the one about to be.
-        </p>
-      </header>
-
       <div className="aff__roster-grid">
         {PROJECTS.map((project) => (
           <ProjectCard key={project.id} project={project} />

@@ -62,8 +62,8 @@ Desktop clips: ≤32 MiB total. Mobile clips: ≤16 MiB total. One film, one 15s
 1. **Hero scroll journey** (the film + 6 chapters above) — cinematic centered minimalist
 2. **Proof statement block** — the "AI is indistinguishable" statement, oversized inline typography (off-grid editorial)
 3. **The roster** — 3 project entry-point cards: AffluentMind101 · Niki · SpillTheChai. (asymmetric premium flow — cards are NOT a grid row, they are staggered with drift offsets, each with its own CTA garment)
-4. **Thesis excerpt** — one short manifesto paragraph about why AI-native content, set as editorial with a narrow vertical side-rail note (horizontal rhythm + side-rail)
-5. **Footer / contact band** — single oversized line "Let's build with AI" + one CTA, no icon row clutter
+4. **Thesis excerpt** — one short manifesto paragraph about why AI-native content, set as editorial with a narrow vertical side-rail note (editorial-with-side-rail)
+5. **Footer / contact band** — single oversized line "hello@affluentmind.ai" + one CTA, no icon row clutter
 
 ≥4 layout families across 5+ sections: cinematic-centered, off-grid editorial, asymmetric premium flow, editorial-with-side-rail, banner CTA. Eyebrow budget: ceil(5/3) = 2.
 
