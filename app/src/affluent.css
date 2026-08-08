@@ -1,0 +1,618 @@
+/* The Affluent Mind — the site's own token layer.
+ * Every hex lives only here + scroll-scrub-scenes.ts; routes stay token-free. */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --aff-bg: #0a0a08;
+  --aff-ink: #f5efe3;
+  --aff-muted: #7a7163;
+  --aff-accent: #e0b469;
+  --aff-accent-deep: #9c7b44;
+  --aff-surface: #14120e;
+  --aff-line: rgb(224 180 105 / 0.16);
+  --aff-font-display: "Space Grotesk", system-ui, sans-serif;
+  --aff-font-body: "Inter", system-ui, sans-serif;
+}
+
+.aff {
+  min-height: 100dvh;
+  background: var(--aff-bg);
+  color: var(--aff-ink);
+  font-family: var(--aff-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================ NAV ============================ */
+
+.aff__nav {
+  position: fixed;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1.1rem clamp(1.25rem, 4vw, 4rem);
+  background: linear-gradient(
+    to bottom,
+    rgb(10 10 8 / 0.78),
+    rgb(10 10 8 / 0)
+  );
+  pointer-events: none;
+}
+
+.aff__nav-brand,
+.aff__nav-links {
+  pointer-events: auto;
+}
+
+.aff__nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--aff-ink);
+  text-decoration: none;
+}
+
+.aff__nav-mark {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--aff-line);
+  border-radius: 50%;
+  color: var(--aff-accent);
+  font-family: var(--aff-font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  place-items: center;
+}
+
+.aff__nav-word {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .aff__nav-word {
+    display: none;
+  }
+}
+
+.aff__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.aff__nav-links a {
+  color: var(--aff-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.aff__nav-links a:hover {
+  color: var(--aff-accent);
+}
+
+@media (max-width: 640px) {
+  .aff__nav-links {
+    gap: 1.05rem;
+  }
+
+  .aff__nav-links a {
+    font-size: 0.72rem;
+  }
+}
+
+/* ========================== JOURNEY ========================== */
+/* The scroll-scrub engine styles itself from scrollScrubTheme.
+ * Overrides below only restyle its chapter layer toward the brand type. */
+
+.scroll-scrub__title {
+  font-family: var(--aff-font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+.scroll-scrub__kicker {
+  font-family: var(--aff-font-body);
+  font-weight: 600;
+  letter-spacing: 0.26em;
+}
+
+.scroll-scrub__body {
+  font-family: var(--aff-font-body);
+  font-weight: 400;
+}
+
+.scroll-scrub__route-button {
+  font-family: var(--aff-font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.scroll-scrub__tags li {
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ======================= SHARED PIECES ======================= */
+
+.aff__eyebrow {
+  margin: 0 0 1.2rem;
+  color: var(--aff-accent);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* ========================== PROOF ============================ */
+
+.aff__proof {
+  padding: clamp(6rem, 14vw, 12rem) clamp(1.25rem, 7vw, 7rem);
+  background: linear-gradient(
+    to bottom,
+    var(--aff-bg),
+    #0d0b08 70%,
+    var(--aff-bg)
+  );
+}
+
+.aff__proof-eyebrow {
+  max-width: 60rem;
+  margin: 0 auto 2.5rem;
+  color: var(--aff-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.aff__proof-line {
+  max-width: 62rem;
+  margin: 0 auto;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.28;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* ========================= MARQUEE =========================== */
+
+.aff__marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--aff-line);
+  border-bottom: 1px solid var(--aff-line);
+  padding: 1.15rem 0;
+}
+
+.aff__marquee-track {
+  display: flex;
+  width: max-content;
+  animation: aff-marquee 28s linear infinite;
+}
+
+.aff__marquee-run {
+  display: flex;
+  gap: 4.5rem;
+  margin: 0;
+  padding-right: 4.5rem;
+  color: var(--aff-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.aff__marquee-run span:nth-child(2) {
+  color: var(--aff-accent);
+}
+
+@keyframes aff-marquee {
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aff__marquee-track {
+    animation: none;
+  }
+}
+
+/* ========================= ROSTER ============================ */
+
+.aff__roster {
+  padding: clamp(6rem, 12vw, 11rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.aff__roster-header {
+  max-width: 52rem;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.aff__roster-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.aff__roster-title-accent {
+  color: var(--aff-accent);
+}
+
+.aff__roster-lede {
+  max-width: 44ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.6;
+}
+
+.aff__roster-grid {
+  display: grid;
+  gap: clamp(5rem, 9vw, 8rem);
+}
+
+/* Each card: media + copy, staggered/asymmetric — layouts differ per card. */
+.aff__card {
+  display: grid;
+  align-items: end;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.aff__card--affluentmind101 {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.aff__card--niki {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.aff__card--niki .aff__card-media {
+  order: 2;
+}
+
+.aff__card--spillthechai {
+  max-width: 62rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .aff__card,
+  .aff__card--affluentmind101,
+  .aff__card--niki,
+  .aff__card--spillthechai {
+    grid-template-columns: 1fr;
+  }
+
+  .aff__card--niki .aff__card-media {
+    order: 0;
+  }
+}
+
+.aff__card-media {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aff-line);
+  border-radius: 2px;
+  aspect-ratio: 4 / 3;
+  background: var(--aff-surface);
+}
+
+.aff__card--niki .aff__card-media {
+  aspect-ratio: 1 / 1;
+}
+
+.aff__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aff__card:hover .aff__card-img {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aff__card:hover .aff__card-img {
+    transform: none;
+  }
+}
+
+.aff__card-copy {
+  padding-bottom: 0.5rem;
+}
+
+.aff__card-kicker {
+  margin: 0 0 1.4rem;
+  color: var(--aff-accent);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.aff__card-metric {
+  border-top: 1px solid var(--aff-line);
+  border-bottom: 1px solid var(--aff-line);
+  padding: 1.4rem 0;
+}
+
+.aff__card-number {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.aff__card-number-caption {
+  max-width: 30ch;
+  margin: 0.7rem 0 0;
+  color: var(--aff-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.aff__card-summary {
+  margin: 1.6rem 0 2.2rem;
+  color: var(--aff-muted);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.65;
+}
+
+/* ===================== CTA GARMENTS ===================== */
+
+/* Garment 1 — framed block (YouTube) */
+.aff__cta {
+  font-family: var(--aff-font-body);
+  text-decoration: none;
+}
+
+.aff__cta--framed {
+  display: inline-block;
+}
+
+.aff__cta-framed-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid var(--aff-accent-deep);
+  padding: 1.05rem 1.6rem;
+  color: var(--aff-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background 220ms ease,
+    color 220ms ease;
+}
+
+.aff__cta--framed:hover .aff__cta-framed-inner {
+  background: var(--aff-accent);
+  color: var(--aff-bg);
+}
+
+.aff__arrow {
+  flex: 0 0 auto;
+}
+
+/* Garment 2 — oversized headline + hint (Niki) */
+.aff__cta--oversized {
+  display: block;
+}
+
+.aff__cta-oversized-line {
+  display: block;
+  color: var(--aff-ink);
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-decoration: underline;
+  text-decoration-color: var(--aff-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+  transition:
+    color 200ms ease,
+    text-decoration-color 200ms ease;
+}
+
+.aff__cta--oversized:hover .aff__cta-oversized-line {
+  color: var(--aff-accent);
+  text-decoration-color: var(--aff-accent);
+}
+
+.aff__cta-oversized-hint {
+  display: block;
+  margin-top: 1rem;
+  color: var(--aff-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Garment 3 — dimmed inline link + stamp (SpillTheChai, inert) */
+.aff__cta--dimmed {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin: 0;
+  color: var(--aff-muted);
+}
+
+.aff__cta-dimmed-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: line-through;
+  text-decoration-color: var(--aff-accent-deep);
+  text-decoration-thickness: 1px;
+}
+
+.aff__cta-dimmed-stamp {
+  border: 1px solid var(--aff-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  color: var(--aff-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ========================= THESIS ============================ */
+
+.aff__thesis {
+  display: grid;
+  grid-template-columns: minmax(0, 0.32fr) minmax(0, 0.68fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(6rem, 12vw, 11rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+@media (max-width: 900px) {
+  .aff__thesis {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aff__thesis-rail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.aff__thesis-rail-line {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 9rem;
+  background: var(--aff-accent-deep);
+}
+
+.aff__thesis-rail-note {
+  margin: 0;
+  color: var(--aff-accent-deep);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+@media (max-width: 900px) {
+  .aff__thesis-rail-note {
+    writing-mode: horizontal-tb;
+  }
+
+  .aff__thesis-rail-line {
+    width: 5rem;
+    height: 1px;
+    margin-top: 0.6rem;
+  }
+}
+
+.aff__thesis-heading {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.aff__thesis-par {
+  max-width: 56ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.7;
+}
+
+/* ========================= FOOTER ============================ */
+
+.aff__footer {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(6rem, 12vw, 10rem) clamp(1.25rem, 6vw, 6rem)
+    clamp(4rem, 8vw, 6rem);
+  background: linear-gradient(
+    to bottom,
+    var(--aff-bg),
+    #0d0b08 60%,
+    #0a0a08
+  );
+  text-align: center;
+}
+
+.aff__footer-eyebrow {
+  margin: 0 0 2.2rem;
+  color: var(--aff-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.aff__footer-cta {
+  display: inline-block;
+  color: var(--aff-ink);
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.8rem, 5.2vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+  background-image: linear-gradient(var(--aff-accent), var(--aff-accent));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition:
+    color 240ms ease,
+    background-size 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aff__footer-cta:hover {
+  color: var(--aff-accent);
+  background-size: 100% 2px;
+}
+
+.aff__footer-subline {
+  margin: 2.6rem 0 0;
+  color: var(--aff-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}

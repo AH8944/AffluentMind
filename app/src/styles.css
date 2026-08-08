@@ -8,6 +8,7 @@
 @source "../packages/app-landing/src";
 @source "../packages/quanta/src";
 @import "@higgsfield/quanta/tailwind.css";
+@import "./affluent.css";
 
 /* New in-app Quanta-style components (moved out of the quanta package). Their
  * CSS uses Tailwind v4 @utility/@source, so it must load through this tailwind
