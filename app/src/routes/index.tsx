@@ -28,7 +28,7 @@ const PROJECTS: Project[] = [
     artPosition: "50% 40%",
     ctaGarment: "framed",
     ctaLabel: "Watch on YouTube",
-    href: "https://youtube.com/@AffluentMind101",
+    href: "https://www.youtube.com/@TheAffluentMind101",
     id: "affluentmind",
     kicker: "AI-produced documentary channel — Live",
     metric: "2.2M",
@@ -230,7 +230,7 @@ function BrandMarquee() {
       <div className="aff__marquee-track">
         {Array.from({ length: 3 }).map((_, i) => (
           <p className="aff__marquee-run" key={i}>
-            <span>@theaffluentmind_yt</span>
+            <span>@TheAffluentMind101</span>
             <span>@heyitsniki2026</span>
             <span>@SpillTheChai</span>
           </p>

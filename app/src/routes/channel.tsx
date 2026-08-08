@@ -69,7 +69,7 @@ function Channel() {
         </a>
         <nav aria-label="Channels" className="aff__nav-links">
           <a href="/">Home</a>
-          <a href="https://youtube.com/@AffluentMind101" rel="noreferrer" target="_blank">
+          <a href="https://www.youtube.com/@TheAffluentMind101" rel="noreferrer" target="_blank">
             YouTube
           </a>
         </nav>
@@ -165,7 +165,7 @@ function Channel() {
         <p className="chan__cta-eyebrow">The flagship</p>
         <a
           className="chan__cta-line"
-          href="https://youtube.com/@AffluentMind101"
+          href="https://www.youtube.com/@TheAffluentMind101"
           rel="noreferrer"
           target="_blank"
         >
