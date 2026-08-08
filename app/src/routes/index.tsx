@@ -40,7 +40,7 @@ const PROJECTS: Project[] = [
   {
     alt: "Niki channel artwork — a warm lit portrait of the persona.",
     art: "/assets/content/niki-poster.jpg",
-    artPosition: "50% 45%",
+    artPosition: "50% 50%",
     ctaGarment: "oversized",
     ctaLabel: "The brand case for Niki",
     href: "/niki",
