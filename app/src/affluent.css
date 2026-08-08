@@ -619,3 +619,275 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+/* ========================== NIKI PAGE ========================= */
+
+.niki {
+  min-height: 100dvh;
+  background: var(--aff-bg);
+}
+
+.niki__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: end;
+  padding: clamp(8rem, 12vw, 11rem) clamp(1.25rem, 6vw, 6rem)
+    clamp(4rem, 8vw, 7rem);
+}
+
+@media (max-width: 900px) {
+  .niki__hero {
+    grid-template-columns: 1fr;
+    padding-top: 7rem;
+  }
+}
+
+.niki__hero-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(2.4rem, 5.4vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.niki__hero-sub {
+  margin: 1.4rem 0 0;
+  color: var(--aff-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.niki__hero-lede {
+  max-width: 46ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1.02rem, 1.3vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.niki__hero-media {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aff-line);
+  border-radius: 2px;
+  aspect-ratio: 1 / 1;
+  background: var(--aff-surface);
+}
+
+.niki__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.niki__disclosure {
+  border-top: 1px solid var(--aff-line);
+  border-bottom: 1px solid var(--aff-line);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 6vw, 6rem);
+  background: var(--aff-surface);
+}
+
+.niki__disclosure-line {
+  max-width: 44rem;
+  margin: 0 auto;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.niki__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem);
+  gap: 1px;
+  background: var(--aff-line);
+}
+
+@media (max-width: 860px) {
+  .niki__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.niki__stat {
+  background: var(--aff-bg);
+  padding: clamp(1.8rem, 3.5vw, 2.8rem) clamp(1rem, 2.5vw, 2rem);
+}
+
+.niki__stat-n {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--aff-accent);
+}
+
+.niki__stat-label {
+  margin: 0.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.niki__persona {
+  padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.niki__persona-title {
+  max-width: 24ch;
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.niki__persona-body {
+  max-width: 52ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.niki__why {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.niki__why-heading {
+  max-width: 26ch;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.niki__why-list {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.niki__why-item {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: first baseline;
+}
+
+.niki__why-index {
+  margin: 0;
+  color: var(--aff-accent-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.niki__why-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.niki__why-body {
+  max-width: 52ch;
+  margin: 0.9rem 0 0;
+  color: var(--aff-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.niki__formats {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem);
+  background: var(--aff-surface);
+}
+
+.niki__formats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.niki__formats-list li {
+  border: 1px solid var(--aff-line);
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  color: var(--aff-ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.niki__cta {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem);
+  text-align: center;
+}
+
+.niki__cta-eyebrow {
+  margin: 0 0 1.6rem;
+  color: var(--aff-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.niki__cta-line {
+  display: inline-block;
+  color: var(--aff-ink);
+  font-family: var(--aff-font-display);
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+.niki__cta-line:hover {
+  color: var(--aff-accent);
+}
+
+.niki__cta-sub {
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: 0.95rem;
+}
+
+.niki__cta-inline {
+  color: var(--aff-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--aff-accent-deep);
+  text-underline-offset: 0.25em;
+}
+
+.niki__foot {
+  border-top: 1px solid var(--aff-line);
+  padding: 2rem clamp(1.25rem, 6vw, 6rem) 3rem;
+  color: var(--aff-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+

@@ -41,14 +41,14 @@ const PROJECTS: Project[] = [
     art: "/assets/content/niki-poster.jpg",
     artPosition: "50% 45%",
     ctaGarment: "oversized",
-    ctaLabel: "niki — UGC + ambassador",
-    href: "https://instagram.com/heyitsniki2026",
+    ctaLabel: "The brand case for Niki",
+    href: "/niki",
     id: "niki",
     kicker: "AI creator persona — Live",
     metric: "120K+",
-    metricLabel: "followers in roughly a month — all AI, every beat",
+    metricLabel: "followers in roughly a month — AI disclosed from day one",
     summary:
-      "Niki is a personality that does not exist as a person. She is a creator persona: scripted, voiced and shipped by the same model stack, every post. Built for UGC marketing and brand-ambassador collaborations, where the output reads native, not synthetic.",
+      "Niki is production infrastructure for brands: a 24-year-old LA fitness-and-lifestyle persona, fully AI-generated, whose bio leads with the disclosure. Audiences follow because the content reads native. Brands work with her for UGC, affiliate and ambassador deals because there is no calendar, no reshoot cost, and no limit on looks — any product, in any colorway, same-day.",
   },
   {
     alt: "SpillTheChai artwork placeholder — a quiet warm tile with a single rising line.",
@@ -134,14 +134,15 @@ function ProjectCard({ project }: { project: Project }) {
           <a
             className="aff__cta aff__cta--oversized"
             href={project.href}
-            rel="noreferrer"
-            target="_blank"
+            {...(project.href.startsWith("/")
+              ? {}
+              : { rel: "noreferrer", target: "_blank" })}
           >
             <span className="aff__cta-oversized-line">
               {project.ctaLabel}
             </span>
             <span className="aff__cta-oversized-hint">
-              Follow or pitch a collaboration on Instagram
+              Read the pitch — UGC, affiliate, ambassador
             </span>
           </a>
         ) : null}
