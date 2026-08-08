@@ -36,7 +36,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: ["This is AI", "The thesis is the interface"],
+    tags: [],
     title: "Every project here is AI.",
   },
   {
