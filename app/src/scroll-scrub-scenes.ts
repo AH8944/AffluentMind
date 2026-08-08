@@ -73,10 +73,10 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "right",
     body:
-      "The brightest node is a persona — a creator who scripts, voices and ships every beat of her own content. UGC-rate output at brand-partner fidelity.",
+      "An LA gym girl whose bio leads with the AI disclosure and grew anyway. Protein counts, PRs, rest-day fits, cold plunges, coffee runs. For a brand: any look, in any colorway, same-day, with 96 short-form derivatives from the same assets.",
     clip: CLIP,
     id: "scene-niki",
-    kicker: "Ch. 3 — Sister network II",
+    kicker: "Ch. 3 — Sister network I",
     label: "Niki",
     mobileClip: MOBILE_CLIP,
     mobilePoster: MOBILE_POSTER,
@@ -91,7 +91,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
       "Two voices, one cup of chai. Priya speaks in small metaphors; Arya, eleven, asks the question everyone else is avoiding. Mom guilt, friend drama, first money decisions — each moment's reason, surfaced.",
     clip: CLIP,
     id: "scene-spillthechai",
-    kicker: "Ch. 4 — Sister network III",
+    kicker: "Ch. 4 — Sister network II",
     label: "SpillTheChai",
     mobileClip: MOBILE_CLIP,
     mobilePoster: MOBILE_POSTER,
