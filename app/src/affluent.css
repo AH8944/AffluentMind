@@ -268,36 +268,20 @@
   display: grid;
   align-items: end;
   gap: clamp(2rem, 4vw, 4rem);
-}
-
-.aff__card--affluentmind {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
 }
 
-.aff__card--niki {
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+.aff__card--spillthechai {
+  margin: 0;
 }
 
 .aff__card--niki .aff__card-media {
-  order: 2;
-}
-
-.aff__card--spillthechai {
-  max-width: 62rem;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  margin: 0 auto;
+  order: 0;
 }
 
 @media (max-width: 900px) {
-  .aff__card,
-  .aff__card--affluentmind,
-  .aff__card--niki,
-  .aff__card--spillthechai {
+  .aff__card {
     grid-template-columns: 1fr;
-  }
-
-  .aff__card--niki .aff__card-media {
-    order: 0;
   }
 }
 
