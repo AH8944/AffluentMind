@@ -47,12 +47,6 @@ function Niki() {
           />
           <span className="aff__nav-word">The Affluent Mind</span>
         </a>
-        <nav aria-label="Channels" className="aff__nav-links">
-          <a href="/">Home</a>
-          <a href="https://instagram.com/heyitsniki2026" rel="noreferrer" target="_blank">
-            Instagram
-          </a>
-        </nav>
       </header>
 
       <section className="niki__hero">

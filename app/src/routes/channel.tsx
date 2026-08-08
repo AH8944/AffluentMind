@@ -67,12 +67,6 @@ function Channel() {
           />
           <span className="aff__nav-word">The Affluent Mind</span>
         </a>
-        <nav aria-label="Channels" className="aff__nav-links">
-          <a href="/">Home</a>
-          <a href="https://www.youtube.com/@TheAffluentMind101" rel="noreferrer" target="_blank">
-            YouTube
-          </a>
-        </nav>
       </header>
 
       <section className="chan__hero">
