@@ -58,17 +58,17 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "left",
     body:
-      "The camera drifts toward a denser node: behavioural finance, told as cinema. Twelve long-form episodes shipped in eight weeks — every frame AI, no shooting, no stock. The channel is the product of the system.",
+      "The camera drifts toward a denser node: behavioural finance told as cinema. Twelve long-form episodes shipped in eight weeks — every frame AI, no shooting, no stock. The channel is the proof the system works at pace.",
     clip: CLIP,
     id: "scene-affluentmind",
-    kicker: "Ch. 2 — Sister network I",
+    kicker: "Ch. 2 — The flagship",
     label: "The Affluent Mind",
     mobileClip: MOBILE_CLIP,
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: ["Faceless YouTube", "Instructional"],
-    title: "AffluentMind101",
+    tags: [],
+    title: "The Affluent Mind",
   },
   {
     align: "right",
@@ -82,7 +82,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: ["AI persona", "UGC + ambassador"],
+    tags: [],
     title: "Niki",
   },
   {
@@ -97,7 +97,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobilePoster: MOBILE_POSTER,
     poster: POSTER,
     scroll: 1.0,
-    tags: ["Coming soon", "Mother & daughter"],
+    tags: [],
     title: "SpillTheChai",
   },
   {

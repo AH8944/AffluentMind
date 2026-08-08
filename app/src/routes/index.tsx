@@ -23,7 +23,7 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    alt: "The Affluent Mind — a flag-and-signal mark on dark ground.",
+    alt: "The Affluent Mind — a golden thought-network brain, old grey floss transitioning to radiant gold filament.",
     art: "/assets/content/affluentmind101-poster.jpg",
     artPosition: "50% 50%",
     ctaGarment: "framed",
@@ -33,9 +33,9 @@ const PROJECTS: Project[] = [
     kicker: "AI-produced documentary channel — Live",
     metric: "2.2M",
     metricLabel:
-      "views, all AI-generated · 24K subscribers · 1.7M on a single episode",
+      "views, all AI-generated · 24K subscribers · 1.7M on one episode",
     summary:
-      "A premium documentary-style channel about behavioral finance: psychology meets money, twelve long-form episodes built on a strict weekly cadence in the first eight weeks. Each episode is roughly 8 minutes of generated 4K visuals, a consistent synthetic narrator, and custom animated data-visualisations — every frame AI, no shooting, no stock. 96 short-form cuts derive from the same assets at zero marginal cost.",
+      "Every scene, voice and edit is AI. Candlelit essays on psychology and money: why the brain treats debt as free, why budgets break on the 20th of the month, why intelligence doesn't protect wealth. Twelve long-form episodes built on a strict weekly cadence in the first eight weeks — no shooting, no stock, every frame generated.",
   },
   {
     alt: "Niki channel artwork — a warm lit portrait of the persona.",
