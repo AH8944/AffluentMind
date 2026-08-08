@@ -88,7 +88,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "left",
     body:
-      "A third node still coalescing — a mother-and-daughter channel filmed over chai. Life lessons, short. Not yet live.",
+      "Two voices, one cup of chai. Priya speaks in small metaphors; Arya, eleven, asks the question everyone else is avoiding. Mom guilt, friend drama, first money decisions — each moment's reason, surfaced.",
     clip: CLIP,
     id: "scene-spillthechai",
     kicker: "Ch. 4 — Sister network III",

@@ -52,18 +52,18 @@ const PROJECTS: Project[] = [
       "Niki is production infrastructure for brands: a 24-year-old LA fitness-and-lifestyle persona, fully AI-generated, whose bio leads with the disclosure. Audiences follow because the content reads native. Brands work with her for UGC, affiliate and ambassador deals because there is no calendar, no reshoot cost, and no limit on looks — any product, in any colorway, same-day.",
   },
   {
-    alt: "SpillTheChai artwork placeholder — a quiet warm tile with a single rising line.",
+    alt: "SpillTheChai — two steaming cups over a small wooden table.",
     art: "/assets/content/spillthechai-poster.jpg",
     artPosition: "50% 50%",
     ctaGarment: "dimmed",
-    ctaLabel: "SpillTheChai — not live yet",
-    href: null,
+    ctaLabel: "SpillTheChai — coming soon",
+    href: "/chai",
     id: "spillthechai",
-    kicker: "Sister network — Not live",
-    metric: "Soon",
-    metricLabel: "a mother-and-daughter channel, filmed over chai",
+    kicker: "Indian-American mother & daughter — Not live",
+    metric: "Priya + Arya",
+    metricLabel: "Two voices, one cup of chai",
     summary:
-      "SpillTheChai is the next node on the constellation: a mother-and-daughter conversational channel where every scene and voice is generated. Life lessons, short scenes, chai. Warm, not corporate. The channel is not live yet.",
+      "Priya, a mother in her forties, speaks in small metaphors. Arya, her daughter, asks the question everyone else is avoiding. Between them sits a cup of chai and whatever went wrong today: mom guilt, friend drama, procrastination, first money decisions, the quiet weight of comparison. The show's rule: always show why the moment happened, not only how to fix it, and leave the viewer with something they can actually use.",
   },
 ];
 
@@ -149,10 +149,17 @@ function ProjectCard({ project }: { project: Project }) {
         ) : null}
 
         {project.ctaGarment === "dimmed" ? (
-          <p aria-hidden="true" className="aff__cta aff__cta--dimmed">
-            <span className="aff__cta-dimmed-label">{project.ctaLabel}</span>
-            <span className="aff__cta-dimmed-stamp">Coming soon</span>
-          </p>
+          project.href ? (
+            <a className="aff__cta aff__cta--dimmed" href={project.href}>
+              <span className="aff__cta-dimmed-label">{project.ctaLabel}</span>
+              <span className="aff__cta-dimmed-stamp">Coming soon</span>
+            </a>
+          ) : (
+            <p aria-hidden="true" className="aff__cta aff__cta--dimmed">
+              <span className="aff__cta-dimmed-label">{project.ctaLabel}</span>
+              <span className="aff__cta-dimmed-stamp">Coming soon</span>
+            </p>
+          )
         ) : null}
       </div>
     </article>

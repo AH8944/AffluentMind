@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as NikiRouteImport } from './routes/niki'
 import { Route as ChannelRouteImport } from './routes/channel'
+import { Route as ChaiRouteImport } from './routes/chai'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -36,6 +37,11 @@ const ChannelRoute = ChannelRouteImport.update({
   path: '/channel',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChaiRoute = ChaiRouteImport.update({
+  id: '/chai',
+  path: '/chai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppRoute = AppRouteImport.update({
   id: '/app',
   path: '/app',
@@ -50,6 +56,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
+  '/chai': typeof ChaiRoute
   '/channel': typeof ChannelRoute
   '/niki': typeof NikiRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
+  '/chai': typeof ChaiRoute
   '/channel': typeof ChannelRoute
   '/niki': typeof NikiRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/app': typeof AppRoute
+  '/chai': typeof ChaiRoute
   '/channel': typeof ChannelRoute
   '/niki': typeof NikiRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -75,13 +84,27 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/app' | '/channel' | '/niki' | '/robots.txt' | '/sitemap.xml'
+    | '/'
+    | '/app'
+    | '/chai'
+    | '/channel'
+    | '/niki'
+    | '/robots.txt'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/app' | '/channel' | '/niki' | '/robots.txt' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/app'
+    | '/chai'
+    | '/channel'
+    | '/niki'
+    | '/robots.txt'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
     | '/app'
+    | '/chai'
     | '/channel'
     | '/niki'
     | '/robots.txt'
@@ -91,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRoute
+  ChaiRoute: typeof ChaiRoute
   ChannelRoute: typeof ChannelRoute
   NikiRoute: typeof NikiRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
@@ -127,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChannelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chai': {
+      id: '/chai'
+      path: '/chai'
+      fullPath: '/chai'
+      preLoaderRoute: typeof ChaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app': {
       id: '/app'
       path: '/app'
@@ -147,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRoute,
+  ChaiRoute: ChaiRoute,
   ChannelRoute: ChannelRoute,
   NikiRoute: NikiRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,

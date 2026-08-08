@@ -1152,3 +1152,192 @@
   font-size: 0.8rem;
   text-align: center;
 }
+
+/* ========================== CHAI PAGE ========================= */
+
+.chai {
+  background: var(--aff-bg);
+}
+
+.chai__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: end;
+  padding: clamp(8rem, 12vw, 11rem) clamp(1.25rem, 6vw, 6rem)
+    clamp(4rem, 8vw, 7rem);
+}
+
+@media (max-width: 900px) {
+  .chai__hero {
+    grid-template-columns: 1fr;
+    padding-top: 7rem;
+  }
+}
+
+.chai__hero-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(2.4rem, 5.4vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.chai__hero-lede {
+  max-width: 48ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1.02rem, 1.3vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.chai__hero-coming {
+  display: inline-block;
+  margin: 1.4rem 0 0;
+  border: 1px solid var(--aff-line);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  color: var(--aff-accent);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.chai__hero-media {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aff-line);
+  border-radius: 2px;
+  aspect-ratio: 4 / 3;
+  background: var(--aff-surface);
+}
+
+.chai__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.chai__personae {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border-top: 1px solid var(--aff-line);
+  border-bottom: 1px solid var(--aff-line);
+  background: var(--aff-line);
+}
+
+@media (max-width: 640px) {
+  .chai__personae {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chai__persona {
+  background: var(--aff-bg);
+  padding: clamp(2.5rem, 4.5vw, 4rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.chai__persona-name {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.chai__persona-role {
+  margin: 0.5rem 0 0;
+  color: var(--aff-accent-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.chai__persona-line {
+  margin: 1.2rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.chai__topics {
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.chai__topics-heading {
+  max-width: 22ch;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--aff-font-display);
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.chai__topics-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--aff-line);
+}
+
+.chai__why-item {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: first baseline;
+  padding: clamp(1.8rem, 3.5vw, 2.8rem) 0;
+  border-bottom: 1px solid var(--aff-line);
+}
+
+.chai__why-index {
+  margin: 0;
+  color: var(--aff-accent-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.chai__why-title {
+  margin: 0;
+  font-family: var(--aff-font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.chai__why-body {
+  max-width: 52ch;
+  margin: 0.9rem 0 0;
+  color: var(--aff-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.chai__system {
+  border-top: 1px solid var(--aff-line);
+  padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+  background: var(--aff-surface);
+}
+
+.chai__system-body {
+  max-width: 60ch;
+  margin: 1.8rem 0 0;
+  color: var(--aff-muted);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.chai__foot {
+  border-top: 1px solid var(--aff-line);
+  padding: 2rem clamp(1.25rem, 6vw, 6rem) 3rem;
+  color: var(--aff-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
