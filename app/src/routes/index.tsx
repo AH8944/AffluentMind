@@ -253,6 +253,10 @@ function Nav() {
         />
         <span className="aff__nav-word">The Affluent Mind</span>
       </a>
+      <nav aria-label="Sections" className="aff__nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
   );
 }

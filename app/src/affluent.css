@@ -1114,6 +1114,37 @@
   font-size: 0.95rem;
 }
 
+.aff__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.aff__nav-links a {
+  color: var(--aff-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.aff__nav-links a:hover {
+  color: var(--aff-accent);
+}
+
+@media (max-width: 640px) {
+  .aff__nav-links {
+    gap: 1.05rem;
+  }
+
+  .aff__nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+}
+
 .niki__foot {
   border-top: 1px solid var(--aff-line);
   padding: 2rem clamp(1.25rem, 6vw, 6rem) 3rem;
@@ -1121,4 +1152,3 @@
   font-size: 0.8rem;
   text-align: center;
 }
-
