@@ -311,10 +311,6 @@
   background: var(--aff-surface);
 }
 
-.aff__card--niki .aff__card-media {
-  aspect-ratio: 1 / 1;
-}
-
 .aff__card-img {
   width: 100%;
   height: 100%;

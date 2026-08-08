@@ -59,7 +59,7 @@ const PROJECTS: Project[] = [
     ctaLabel: "SpillTheChai — coming soon",
     href: "/chai",
     id: "spillthechai",
-    kicker: "Indian-American mother & daughter — Not live",
+    kicker: "AI-illustrated, heartfelt — coming soon",
     metric: "Priya + Arya",
     metricLabel: "Two voices, one cup of chai",
     summary:
@@ -151,12 +151,10 @@ function ProjectCard({ project }: { project: Project }) {
         {project.ctaGarment === "dimmed" ? (
           project.href ? (
             <a className="aff__cta aff__cta--dimmed" href={project.href}>
-              <span className="aff__cta-dimmed-label">{project.ctaLabel}</span>
               <span className="aff__cta-dimmed-stamp">Coming soon</span>
             </a>
           ) : (
             <p aria-hidden="true" className="aff__cta aff__cta--dimmed">
-              <span className="aff__cta-dimmed-label">{project.ctaLabel}</span>
               <span className="aff__cta-dimmed-stamp">Coming soon</span>
             </p>
           )
