@@ -25,7 +25,7 @@ const PROJECTS: Project[] = [
   {
     alt: "The Affluent Mind — a flag-and-signal mark on dark ground.",
     art: "/assets/content/affluentmind101-poster.jpg",
-    artPosition: "50% 40%",
+    artPosition: "20% 85%",
     ctaGarment: "framed",
     ctaLabel: "Watch on YouTube",
     href: "https://www.youtube.com/@TheAffluentMind101",
