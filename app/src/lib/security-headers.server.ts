@@ -12,9 +12,9 @@ export function applySecurityHeaders(response: Response): Response {
       "script-src 'self' 'unsafe-inline'; " +
       "style-src 'self' 'unsafe-inline'; " +
       "font-src 'self'; " +
-      "img-src 'self' data: https:; media-src 'self' https: blob:; " +
-      "connect-src 'self' https:; " +
-      "frame-src 'self' https://auth.higgsfield.app https://auth.higgsfield-dev.app; " +
+      "img-src 'self'; media-src 'self' blob:; " +
+      "connect-src 'self'; " +
+      "frame-src 'self'; " +
       "base-uri 'self'; form-action 'self'",
   );
   headers.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
