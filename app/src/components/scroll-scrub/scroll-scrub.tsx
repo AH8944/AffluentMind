@@ -5,6 +5,8 @@ import type { CSSProperties, ReactNode } from "react";
 
 import "./scroll-scrub.css";
 
+import { journeyChapters } from "@/scroll-scrub-scenes";
+
 export interface ScrollScrubScene {
   id: string;
   label: string;
@@ -89,6 +91,7 @@ interface RuntimeSegment extends Segment {
 
 interface Controller {
   jumpToSection: (index: number) => void;
+  jumpToFraction: (fraction: number) => void;
 }
 
 type ThemeStyle = CSSProperties & Record<`--ss-${string}`, string | number>;
@@ -177,10 +180,46 @@ export function ScrollScrub({
   const controllerRef = useRef<Controller | null>(null);
   const onActiveRef = useRef(onActiveSectionChange);
   const [activeSection, setActiveSection] = useState(0);
+  const [activeChapterIndex, setActiveChapterIndex] = useState(0);
   const segments = useMemo(
     () => buildSegments(scenes, connectors ?? []),
     [connectors, scenes]
   );
+
+  // For single-scene journeys, the rail tracks the scroll position as a
+  // fraction of the journey's total scroll range and maps that fraction to
+  // the nearest chapter index. This is separate from the engine's segment
+  // index (which stays 0 for a single scene).
+  useEffect(() => {
+    if (scenes.length !== 1) {
+      return;
+    }
+    const root = rootRef.current;
+    if (!root) return;
+
+    const updateActiveChapter = () => {
+      const pageY = window.scrollY || window.pageYOffset;
+      const rect = root.getBoundingClientRect();
+      const rootTop = rect.top + pageY;
+      const total = root.offsetHeight - window.innerHeight;
+      if (total <= 0) return;
+      const fraction = Math.max(0, Math.min(1, (pageY - rootTop) / total));
+      let closest = 0;
+      let closestDist = Infinity;
+      for (let i = 0; i < journeyChapters.length; i++) {
+        const dist = Math.abs(journeyChapters[i].position - fraction);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = i;
+        }
+      }
+      setActiveChapterIndex(closest);
+    };
+
+    window.addEventListener("scroll", updateActiveChapter, { passive: true });
+    updateActiveChapter();
+    return () => window.removeEventListener("scroll", updateActiveChapter);
+  }, [scenes.length]);
 
   // Keep the latest callback reachable from the scroll loop without making it a
   // dependency of the controller effect. Synced in an effect, never during
@@ -540,6 +579,14 @@ export function ScrollScrub({
           top,
         });
       },
+      jumpToFraction(fraction) {
+        const total = Math.max(runtime.at(-1)?.end ?? viewportHeight, viewportHeight);
+        const top = rootTop + clamp(fraction) * total;
+        window.scrollTo({
+          behavior: reduceMotion ? "auto" : "smooth",
+          top,
+        });
+      },
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -634,17 +681,33 @@ export function ScrollScrub({
         </div>
 
         <nav aria-label="Scroll chapters" className="scroll-scrub__route">
-          {scenes.map((scene, index) => (
-            <button
-              aria-current={activeSection === index ? "step" : undefined}
-              className="scroll-scrub__route-button"
-              key={scene.id}
-              onClick={() => controllerRef.current?.jumpToSection(index)}
-              type="button"
-            >
-              <span>{scene.label}</span>
-            </button>
-          ))}
+          {scenes.length === 1
+            ? journeyChapters.map((chapter, chapterIndex) => (
+                <button
+                  aria-current={
+                    chapterIndex === activeChapterIndex ? "step" : undefined
+                  }
+                  className="scroll-scrub__route-button"
+                  key={chapter.label}
+                  onClick={() =>
+                    controllerRef.current?.jumpToFraction(chapter.position)
+                  }
+                  type="button"
+                >
+                  <span>{chapter.label}</span>
+                </button>
+              ))
+            : scenes.map((scene, index) => (
+                <button
+                  aria-current={activeSection === index ? "step" : undefined}
+                  className="scroll-scrub__route-button"
+                  key={scene.id}
+                  onClick={() => controllerRef.current?.jumpToSection(index)}
+                  type="button"
+                >
+                  <span>{scene.label}</span>
+                </button>
+              ))}
         </nav>
       </div>
 
