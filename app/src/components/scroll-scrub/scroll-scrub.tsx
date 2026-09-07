@@ -240,9 +240,11 @@ export function ScrollScrub({
     const bandNodes = [
       ...root.querySelectorAll<HTMLElement>("[data-scroll-scrub-band]"),
     ];
+    const singleSceneJourney =
+      scenes.length === 1 && journeyChapters.length > 0;
     if (
       layerNodes.length !== segments.length ||
-      bandNodes.length !== segments.length
+      (!singleSceneJourney && bandNodes.length !== segments.length)
     ) {
       throw new Error("ScrollScrub segment markup is out of sync");
     }
@@ -315,6 +317,15 @@ export function ScrollScrub({
         const rect = segment.band.getBoundingClientRect();
         segment.start = rect.top + pageY - rootTop;
         segment.end = segment.start + rect.height;
+      }
+      if (singleSceneJourney && bandNodes.length > 1) {
+        // One clip spans every chapter band: the scrub range runs from the
+        // first chapter's top to the last chapter's bottom, so the film
+        // plays continuously with no restart between chapters.
+        const firstRect = bandNodes[0].getBoundingClientRect();
+        const lastRect = bandNodes[bandNodes.length - 1].getBoundingClientRect();
+        runtime[0].start = firstRect.top + pageY - rootTop;
+        runtime[0].end = lastRect.bottom + pageY - rootTop;
       }
       total = Math.max(runtime.at(-1)?.end ?? viewportHeight, viewportHeight);
       dirty = true;
@@ -712,7 +723,38 @@ export function ScrollScrub({
       </div>
 
       <div className="scroll-scrub__story">
-        {segments.map((segment) => {
+        {scenes.length === 1
+          ? journeyChapters.map((chapter, chapterIndex) => {
+              const bandStyle: CSSProperties = {
+                minHeight: "100dvh",
+              };
+              const Heading = chapterIndex === 0 ? "h1" : "h2";
+              const align =
+                chapterIndex % 2 === 0 ? ("left" as const) : ("right" as const);
+              return (
+                <article
+                  className="scroll-scrub__chapter"
+                  data-align={align}
+                  data-scroll-scrub-band=""
+                  id={`chapter-${chapterIndex}`}
+                  key={chapter.label}
+                  style={bandStyle}
+                >
+                  <div className="scroll-scrub__chapter-pin">
+                    <div className="scroll-scrub__copy">
+                      {chapter.kicker ? (
+                        <p className="scroll-scrub__kicker">{chapter.kicker}</p>
+                      ) : null}
+                      <Heading className="scroll-scrub__title">
+                        {chapter.title}
+                      </Heading>
+                      <p className="scroll-scrub__body">{chapter.body}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })
+          : segments.map((segment) => {
           const bandStyle: CSSProperties = {
             minHeight: `${Math.max(segment.weight, 0.2) * 100}dvh`,
           };
