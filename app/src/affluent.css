@@ -1,7 +1,22 @@
 /* The Affluent Mind — the site's own token layer.
- * Every hex lives only here + scroll-scrub-scenes.ts; routes stay token-free. */
+ * Every hex lives only here + scroll-scrub-scenes.ts; routes stay token-free.
+ * Fonts self-hosted so no Google Fonts round-trip; weights served as variable fonts. */
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/assets/fonts/space-grotesk-var.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/assets/fonts/inter-var.woff2") format("woff2-variations");
+}
 
 :root {
   --aff-bg: #0a0a08;
